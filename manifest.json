@@ -1,0 +1,11 @@
+{
+  "name": "Pokemon Go CORS",
+  "version": "1.0",
+  "description": "Enables the pokemon go map",
+  "permissions": ["webRequest", "webRequestBlocking", "http://localhost:3000/*", "https://sso.pokemon.com/*"],
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "manifest_version": 2
+}
