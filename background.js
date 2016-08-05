@@ -17,6 +17,17 @@ function requestListener(details) {
     })
   }
 
+  const userAgentHeader = details.requestHeaders.find(header => header.name.toLowerCase() === 'user-agent')
+
+  if(userAgentHeader) {
+    userAgentHeader.value = 'niantic'
+  } else {
+    details.requestHeaders.push({
+      name: 'User-Agent',
+      value: 'niantic'
+    })
+  }
+
   const accessControlRequestHeadersHeader = details.requestHeaders.find(header => header.name.toLowerCase() === 'access-control-request-headers')
 
   if(accessControlRequestHeadersHeader) {
